@@ -1,6 +1,9 @@
 // Returns the maximum value that  
 // can be put in a knapsack of capacity W 
 
+
+
+//Top Down
 int knapSack(int W, int wt[], int val[], int n) 
 { 
     vector<vector<int>> DP(n + 1 ,vector<int> (W + 1));
@@ -18,4 +21,15 @@ int knapSack(int W, int wt[], int val[], int n)
 	    }
     }
 	return DP[n][W];
+}
+
+
+//Bottom Up
+vector<vector<int>> DP(1001 , vector<int> (1001, -1));
+int knapSack(int W, int wt[], int val[], int n) 
+{ 
+   if(W == 0 || n == 0) return 0;
+   if(DP[n][W] != -1) return DP[n][W]; 
+   if (wt[n - 1] > W)  DP[n][W] =  knapSack(W, wt, val, n - 1);  
+   else DP[n][W] = max(val[n - 1] + knapSack(W - wt[n - 1], wt, val, n - 1), knapSack(W, wt, val, n - 1));  
 }
