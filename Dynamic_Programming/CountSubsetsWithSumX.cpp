@@ -1,4 +1,4 @@
-int isSubsetSum(int set[], int n, int sum) 
+int countSubsetSum(int set[], int n, int sum) 
 {
     int DP[n + 1][sum + 1]; 
     
