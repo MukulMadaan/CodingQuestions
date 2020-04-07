@@ -4,6 +4,8 @@ int countSubsetDiff(int set[], int n, int diff)
     
     for (int i = 0; i < n; i++) sum += set[i];
     
+    if(sum < diff || (diff + sum) % 2 != 0) return 0;
+    
     sum = (diff + sum)/2;
    
     int DP[n + 1][sum + 1]; 
