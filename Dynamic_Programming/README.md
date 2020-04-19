@@ -25,7 +25,7 @@ Equal Sum Partition
 Count of Subset Sum
 ```
 ```
-Count of Subset Sum
+Count of minimum Difference
 ```
 ```
 Minimum Subset Sum difference
